@@ -41,6 +41,7 @@ class DockerExtension {
     private Map<String, String> buildArgs = ImmutableMap.of()
     private boolean pull = false
     private boolean noCache = false
+    private boolean squash = false
 
     private File resolvedDockerfile = null
     private File resolvedDockerComposeTemplate = null
@@ -157,6 +158,14 @@ class DockerExtension {
 
     public void pull(boolean pull) {
         this.pull = pull
+    }
+
+    public boolean getSquash() {
+        return squash
+    }
+
+    public void squash(boolean squash) {
+        this.squash = squash
     }
 
     public boolean getNoCache() {
